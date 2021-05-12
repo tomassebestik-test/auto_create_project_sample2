@@ -1,0 +1,16 @@
+stages:
+  - test
+
+# TEMPLATES
+.base_template:
+  image: python:3.8-slim-buster
+  tags:
+    - test
+
+# STAGES
+test_task:
+  stage: test
+  extends: .base_template
+  script:
+    - echo "This is dummy test"
+  when: manual
